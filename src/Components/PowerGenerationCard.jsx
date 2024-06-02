@@ -1,4 +1,5 @@
 import React from "react";
+import PowerGeneration from "../Logos/PowerGeneration.png";
 import {
   Card,
   CardBody,
@@ -7,30 +8,24 @@ import {
   Button,
 } from "@material-tailwind/react";
 
-export function CardWithLink({
-  title,
-  description,
-  link,
-  linkText,
-  date,
-  graph,
-}) {
+export function PowerGenerationCard() {
   return (
     <Card className="mt-6 mx-4 hover:shadow-2xl">
       <CardBody>
         <img
           className="rounded-2xl py-3"
           style={{ height: "100px", width: "100px" }}
-          src={link}
+          src={PowerGeneration}
           alt="Description of the image"
         />
         <Typography variant="h5" color="blue-gray" className="mb-2">
-          {title}
+          Power Genration
         </Typography>
-        <Typography>{date}</Typography>
-        <Typography>{description}</Typography>
+        <Typography>
+          <span>Today's Power Generation </span>
+          <span className="text-xl text-black">200Kwh</span>
+        </Typography>
       </CardBody>
-      <CardFooter className="pt-0"></CardFooter>
     </Card>
   );
 }

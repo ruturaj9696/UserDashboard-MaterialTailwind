@@ -1,49 +1,32 @@
 import React from "react";
-import {
-  Card,
-  CardBody,
-  CardFooter,
-  Typography,
-  Button,
-} from "@material-tailwind/react";
-import CleaningCycle from "../Components/CleaningCycle";
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
 
-export function CleaningCycleChart({ title, description, link, linkText ,date,graph}) {
+const cyclesCompleted = 8;
+
+const CleaningCycleChart = () => {
+  const percentage = (cyclesCompleted / 24) * 100;
+
   return (
-    <Card className="mt-6 mx-4 hover:shadow-2xl">
-      <CardBody>
-        <div className="m-3">Here Logo Will come</div>
-        <Typography variant="h5" color="blue-gray" className="mb-2">
-          {title}
-        </Typography>
-        <div>
-            <CleaningCycle/>
-        </div>
-        <Typography>{date}</Typography>
-        <Typography>{description}</Typography>
-        
-      </CardBody>
-      <CardFooter className="pt-0">
-        <a href={link} className="inline-block">
-          <Button size="sm" variant="text" className="flex items-center gap-2">
-            {linkText}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="h-4 w-4"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-              />
-            </svg>
-          </Button>
-        </a>
-      </CardFooter>
-    </Card>
+    <>
+      <div style={{ width: 120, height: 120 }}>
+        <CircularProgressbar
+          value={percentage}
+          text={`${cyclesCompleted}/24`}
+          styles={buildStyles({
+            textSize: "16px",
+            textColor:"rgba(1,1,1,1)",
+            pathColor: `rgba(1,1,1,1`,
+            textColor: "#3e98c7",
+            trailColor: "#d6d6d6",
+          })}
+        />
+      </div>
+    </>
   );
-}
+};
+
+export default CleaningCycleChart;
+
+
+

@@ -6,29 +6,24 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+import Finance from "../Logos/Finance.png";
 
-export function CardWithLink({
-  title,
-  description,
-  link,
-  linkText,
-  date,
-  graph,
-}) {
+export function FinancialAnalysis() {
   return (
     <Card className="mt-6 mx-4 hover:shadow-2xl">
       <CardBody>
         <img
           className="rounded-2xl py-3"
           style={{ height: "100px", width: "100px" }}
-          src={link}
+          src={Finance}
           alt="Description of the image"
         />
         <Typography variant="h5" color="blue-gray" className="mb-2">
-          {title}
+          Finalcial Analysis
         </Typography>
-        <Typography>{date}</Typography>
-        <Typography>{description}</Typography>
+        <Typography>
+          This Tab contains All Financial Analysis
+        </Typography>
       </CardBody>
       <CardFooter className="pt-0"></CardFooter>
     </Card>

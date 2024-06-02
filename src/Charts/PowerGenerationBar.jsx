@@ -99,9 +99,9 @@ import {
     },
   };
    
-  export default function PoerGenerationBar() {
+  export default function PowerGenerationBar() {
     return (
-      <Card>
+      <Card className="shadow-none">
         <CardHeader
           floated={false}
           shadow={false}

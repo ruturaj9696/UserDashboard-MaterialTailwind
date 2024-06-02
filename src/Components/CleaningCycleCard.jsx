@@ -1,0 +1,33 @@
+import React from "react";
+import { Card, CardBody, Typography } from "@material-tailwind/react";
+import CleaningCycleChart from "../Charts/CleaningCycleChart";
+import PlantInformation from "../Logos/PlantInformation.png";
+
+export function CleaningCycleCard() {
+  return (
+    <Card className="mt-6 mx-4 hover:shadow-2xl bg-red- grid grid-cols-2">
+      <CardBody>
+        <img
+          className="rounded-2xl py-3"
+          style={{ height: "100px", width: "100px" }}
+          src={PlantInformation}
+          alt="Description of the image"
+        />
+        <Typography variant="h5" color="blue-gray" className="mb-2 flex">
+          <div>
+            <div>Cleaning Cycle</div>
+            <div className="mt-5"></div>
+          </div>
+        </Typography>
+        <Typography>
+          <div>
+            Number of cleaning Cycles completed/Total Number of cleaning cycles
+          </div>
+        </Typography>
+      </CardBody>
+      <div className=" flex items-center justify-center ">
+        <CleaningCycleChart />
+      </div>
+    </Card>
+  );
+}
