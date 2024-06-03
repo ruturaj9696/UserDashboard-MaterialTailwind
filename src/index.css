@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add this to your styles.css or an equivalent file */
+.landscape-popup {
+  max-height: 100vh;
+  aspect-ratio: 16 / 9;
+}
+
+/* Optional responsive adjustments */
+@media (max-width: 768px) {
+  .landscape-popup {
+    aspect-ratio: 4 / 3;
+  }
+}
