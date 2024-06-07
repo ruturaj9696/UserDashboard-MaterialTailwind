@@ -108,20 +108,16 @@ import {
           color="transparent"
           className="flex flex-col gap-4 rounded-none md:flex-row md:items-center"
         >
-          <div className="w-max rounded-lg bg-gray-900 p-5 text-white">
-            <Square3Stack3DIcon className="h-6 w-6" />
-          </div>
           <div>
             <Typography variant="h6" color="blue-gray">
-              Bar Chart
+              Power Generation Graph
             </Typography>
             <Typography
               variant="small"
               color="gray"
               className="max-w-sm font-normal"
             >
-              Visualize your data in a simple way using the
-              @material-tailwind/react chart plugin.
+              Visualizing the Power Generation Data using Bar graph.
             </Typography>
           </div>
         </CardHeader>

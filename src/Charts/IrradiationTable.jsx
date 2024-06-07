@@ -18,7 +18,7 @@ const TABLE_ROWS = [
   { month: "December", irradiation: "6.0 kWh/m²/day", location: "Location C" },
 ];
 
-const rowsPerPage = 8;
+const rowsPerPage = 5;
 
 function DefaultPagination({ total, active, setActive }) {
   const getItemProps = (index) => ({
