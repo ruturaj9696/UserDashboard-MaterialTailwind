@@ -19,7 +19,7 @@ const TABLE_ROWS = [
   { readingDate: "2024-12-01", inputReading: "260", expertReading: "265", netReading: "5", generationReading: "155", expertBill: "$105" },
 ];
 
-const rowsPerPage = 3;
+const rowsPerPage = 5;
 
 function DefaultPagination({ total, active, setActive }) {
   const getItemProps = (index) => ({

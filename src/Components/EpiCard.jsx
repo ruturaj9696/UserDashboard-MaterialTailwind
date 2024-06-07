@@ -42,12 +42,13 @@ export function EpiCard() {
           </Typography>
         </CardBody>
       </Card>
-      <EpiPopup show={showPopup} onClose={handleClosePopup}>
-        <div className="text-center">
-          <Typography variant="h4" className="mt-6">
-            Epi Details
-          </Typography>
-        </div>
+      <EpiPopup show={showPopup} onClose={handleClosePopup}
+      content={
+        <Typography variant="h6" color="blue-gray" >
+          EPI Details
+        </Typography>
+      }
+      >
       </EpiPopup>
     </>
   );

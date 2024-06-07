@@ -10,9 +10,11 @@ export function EpiPopup({ show, onClose ,content}) {
         <button className="absolute top-2 right-2 text-black" onClick={onClose}>
           X
         </button>
-        {content}
-        <div className="mt-40">
+        <div className="flex justify-center items-center flex-col w-full h-full">
+          {content}
+          <div className="mt-8 w-full">
           <EpiBarChart />
+          </div>
         </div>
       </div>
     </div>

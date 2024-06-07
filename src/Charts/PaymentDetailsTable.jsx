@@ -2,20 +2,20 @@ import React from "react";
 import { Button, IconButton, Card, Typography } from "@material-tailwind/react";
 import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 
-const TABLE_HEAD = ["Month", "Irradiation", "Location"];
+const TABLE_HEAD = ["Details", "Amount", "Payment Date"];
 const TABLE_ROWS = [
-  { month: "January", irradiation: "5.5 kWh/m²/day", location: "Location A" },
-  { month: "February", irradiation: "6.0 kWh/m²/day", location: "Location B" },
-  { month: "March", irradiation: "6.5 kWh/m²/day", location: "Pune" },
-  { month: "April", irradiation: "7.0 kWh/m²/day", location: "Location A" },
-  { month: "May", irradiation: "7.5 kWh/m²/day", location: "Location B" },
-  { month: "June", irradiation: "8.0 kWh/m²/day", location: "Location C" },
-  { month: "July", irradiation: "8.5 kWh/m²/day", location: "Location A" },
-  { month: "August", irradiation: "8.0 kWh/m²/day", location: "Location B" },
-  { month: "September", irradiation: "7.5 kWh/m²/day", location: "Location C" },
-  { month: "October", irradiation: "7.0 kWh/m²/day", location: "Location A" },
-  { month: "November", irradiation: "6.5 kWh/m²/day", location: "Ravet" },
-  { month: "December", irradiation: "6.0 kWh/m²/day", location: "Location C" },
+  { details: "Details about", amount: "100", paymentDate: "25/04/2024" },
+  { details: "Details", amount: "120", paymentDate: "12/05/2023" },
+  { details: "Details", amount: "120", paymentDate: "22/05/2023" },
+  { details: "Details", amount: "120", paymentDate: "22/05/2023" },
+  { details: "Details", amount: "120", paymentDate: "22/05/2023" },
+  { details: "Details", amount: "130", paymentDate: "23/06/2023" },
+  { details: "Details", amount: "140", paymentDate: "15/07/2023" },
+  { details: "Details", amount: "150", paymentDate: "01/08/2023" },
+  { details: "Details", amount: "160", paymentDate: "10/09/2023" },
+  { details: "Details", amount: "170", paymentDate: "05/10/2023" },
+  { details: "Details", amount: "180", paymentDate: "11/11/2023" },
+  { details: "Details", amount: "190", paymentDate: "20/12/2023" },
 ];
 
 const rowsPerPage = 5;
@@ -38,7 +38,7 @@ function DefaultPagination({ total, active, setActive }) {
   };
 
   return (
-    <div className="flex items-center gap-4 mt-4">
+    <div className="flex items-center gap-4">
       <Button
         variant="text"
         className="flex items-center gap-2"
@@ -66,7 +66,7 @@ function DefaultPagination({ total, active, setActive }) {
   );
 }
 
-function DefaultTable() {
+function PaymentDetailsTable() {
   const [activePage, setActivePage] = React.useState(1);
 
   const startIndex = (activePage - 1) * rowsPerPage;
@@ -81,14 +81,14 @@ function DefaultTable() {
             {TABLE_HEAD.map((head) => (
               <th
                 key={head}
-                className="border-b border-blue-gray-100 bg-blue-gray-50 p-4 text-center"
+                className="border-b border-blue-gray-100 bg-blue-gray-50 p-4"
                 style={{
                   width:
-                    head === "Month"
-                      ? "20%"
-                      : head === "Irradiation"
+                    head === "Details"
                       ? "40%"
-                      : "40%",
+                      : head === "Amount"
+                      ? "30%"
+                      : "30%",
                 }}
               >
                 <Typography
@@ -103,39 +103,37 @@ function DefaultTable() {
           </tr>
         </thead>
         <tbody>
-          {currentRows.map(({ month, irradiation, location }, index) => {
+          {currentRows.map(({ details, amount, paymentDate }, index) => {
             const isLast = index === currentRows.length - 1;
-            const classes = isLast
-              ? "p-4 text-center"
-              : "p-4 border-b border-blue-gray-50 text-center";
+            const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
 
             return (
-              <tr key={month}>
-                <td className={classes} style={{ width: "20%" }}>
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {month}
-                  </Typography>
-                </td>
+              <tr key={index}>
                 <td className={classes} style={{ width: "40%" }}>
                   <Typography
                     variant="small"
                     color="blue-gray"
                     className="font-normal"
                   >
-                    {irradiation}
+                    {details}
                   </Typography>
                 </td>
-                <td className={classes} style={{ width: "40%" }}>
+                <td className={classes} style={{ width: "30%" }}>
                   <Typography
                     variant="small"
                     color="blue-gray"
                     className="font-normal"
                   >
-                    {location}
+                    {amount}
+                  </Typography>
+                </td>
+                <td className={classes} style={{ width: "30%" }}>
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal"
+                  >
+                    {paymentDate}
                   </Typography>
                 </td>
               </tr>
@@ -154,4 +152,4 @@ function DefaultTable() {
   );
 }
 
-export default DefaultTable;
+export default PaymentDetailsTable;

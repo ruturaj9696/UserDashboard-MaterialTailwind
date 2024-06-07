@@ -135,9 +135,6 @@ export default function Example() {
         className="flex flex-col gap-4 rounded-none md:flex-row md:items-center"
       >
         <div className="flex flex-col md:flex-row md:justify-between w-full">
-          <Typography variant="h6" color="blue-gray">
-            Epi Chart
-          </Typography>
           <div>
             <Typography
               variant="small"
