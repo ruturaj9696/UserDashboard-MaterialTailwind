@@ -31,7 +31,7 @@ export function IrradiationCard() {
             Irradiation
           </Typography>
           <Typography>
-            <div>This Month's Irradiation</div>
+            <div>This month's irradiation</div>
             <div className="text-black text-xl">20 kwh/m^2</div>
           </Typography>
         </CardBody>

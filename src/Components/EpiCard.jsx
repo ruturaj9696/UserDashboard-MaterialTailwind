@@ -30,7 +30,6 @@ export function EpiCard() {
           <img
             className="rounded-2xl py-3"
             style={{ height: "100px", width: "100px" }}
-            // src={PowerGeneration}
             src={EpiLogo}
             alt="Power Generation"
           />
@@ -38,7 +37,7 @@ export function EpiCard() {
             EPI
           </Typography>
           <Typography>
-            This Month's Epi
+            This month's Epi
             <div className="text-black text-xl">93%</div>
           </Typography>
         </CardBody>

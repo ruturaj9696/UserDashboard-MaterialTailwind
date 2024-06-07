@@ -8,6 +8,7 @@ import { StickyNavbar } from "../Components/StickyNavbar";
 import { CleaningCycleCard } from "./CleaningCycleCard";
 import { EpiCard } from "./EpiCard";
 import { FinancialAnalysis } from "./FinancialAnalysisCard";
+import PaymentDetailsCard from "./PaymentDetailsCard";
 import { ReportCard } from "./ReportCard";
 const Dashboard = () => {
   return (
@@ -32,8 +33,9 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center">
+        <div className="grid grid-cols-2">
           <FinancialAnalysis/>
+          <PaymentDetailsCard/>
         </div>
       </div>
     </>

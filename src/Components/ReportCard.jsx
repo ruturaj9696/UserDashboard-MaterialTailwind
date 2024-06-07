@@ -18,7 +18,7 @@ export function ReportCard({ title, description, link, linkText ,date,graph}) {
           Reports
         </Typography>
         <Typography>
-            This Tab contains All kind of Reports.
+            This tab contains all kind of reports.
         </Typography>
       </CardBody>
     </Card>

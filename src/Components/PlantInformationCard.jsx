@@ -17,10 +17,10 @@ export function PlantInformationCard() {
           src={PlantInformation}
           alt="Description of the image"
         />
-        <Typography variant="h5" color="blue-gray" className="mb-2">
+        <Typography variant="h5" color="blue-gray" className="mt-3">
           Plant Information
         </Typography>
-        <Typography>This Tab contains Your Plant Information</Typography>
+        <Typography  className="mt-2">This tab contains your plant information</Typography>
       </CardBody>
       <CardFooter className="pt-0"></CardFooter>
     </Card>

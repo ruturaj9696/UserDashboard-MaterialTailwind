@@ -22,7 +22,7 @@ export function FinancialAnalysis() {
           Finalcial Analysis
         </Typography>
         <Typography>
-          This Tab contains All Financial Analysis
+          This tab contains all financial analysis
         </Typography>
       </CardBody>
       <CardFooter className="pt-0"></CardFooter>

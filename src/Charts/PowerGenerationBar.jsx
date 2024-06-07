@@ -117,7 +117,7 @@ import {
               color="gray"
               className="max-w-sm font-normal"
             >
-              Visualizing the Power Generation Data using Bar graph.
+              Visualizing the power generation data using bar graph.
             </Typography>
           </div>
         </CardHeader>

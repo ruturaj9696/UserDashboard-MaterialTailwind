@@ -8,7 +8,7 @@ export function CleaningCycleCard() {
     <Card className="mt-6 mx-4 hover:shadow-2xl bg-red- grid grid-cols-2">
       <CardBody>
         <img
-          className="rounded-2xl py-3"
+          className="rounded-2xl py-3 pt-0"
           style={{ height: "100px", width: "100px" }}
           src={CleaningCycle}
           alt="Description of the image"
@@ -16,12 +16,12 @@ export function CleaningCycleCard() {
         <Typography variant="h5" color="blue-gray" className="mb-2 flex">
           <div>
             <div>Cleaning Cycle</div>
-            <div className="mt-5"></div>
+            <div className="mt-3"></div>
           </div>
         </Typography>
         <Typography>
           <div>
-            Number of cleaning Cycles completed/Total Number of cleaning cycles
+            Number of cleaning Cycles completed / Total number of cleaning cycles
           </div>
         </Typography>
       </CardBody>

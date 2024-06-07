@@ -8,14 +8,7 @@ import {
 } from "@material-tailwind/react";
 import PowerGenerationBar from "../Charts/PowerGenerationBar";
 import PowerGeneration from "../Logos/PowerGeneration.svg";
-export function PowerGenerationGraph({
-  title,
-  description,
-  link,
-  linkText,
-  date,
-  graph,
-}) {
+export function PowerGenerationGraph() {
   return (
     <Card className="mt-6 mx-4 hover:shadow-2xl">
       <CardBody>
@@ -28,16 +21,8 @@ export function PowerGenerationGraph({
         <div>
           <PowerGenerationBar />
         </div>
-        <Typography>{date}</Typography>
-        <Typography>{description}</Typography>
       </CardBody>
-      <CardFooter className="pt-0">
-        <a href={link} className="inline-block">
-          <Button size="sm" variant="text" className="flex items-center gap-2">
-            {linkText}
-          </Button>
-        </a>
-      </CardFooter>
+      
     </Card>
   );
 }
