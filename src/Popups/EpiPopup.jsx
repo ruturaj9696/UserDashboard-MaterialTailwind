@@ -1,5 +1,5 @@
 import React from "react";
-import Example from "../Charts/EpiBarChart";
+import EpiBarChart from "../Charts/EpiBarChart";
 
 export function EpiPopup({ show, onClose ,content}) {
   if (!show) return null;
@@ -12,7 +12,7 @@ export function EpiPopup({ show, onClose ,content}) {
         </button>
         {content}
         <div className="mt-40">
-          <Example />
+          <EpiBarChart />
         </div>
       </div>
     </div>
