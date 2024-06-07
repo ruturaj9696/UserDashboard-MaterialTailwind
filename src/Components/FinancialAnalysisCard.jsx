@@ -6,7 +6,7 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
-import Finance from "../Logos/Finance.png";
+import FinancialAnalysisLogo from "../Logos/FinancialAnalysis.svg";
 
 export function FinancialAnalysis() {
   return (
@@ -15,7 +15,7 @@ export function FinancialAnalysis() {
         <img
           className="rounded-2xl py-3"
           style={{ height: "100px", width: "100px" }}
-          src={Finance}
+          src={FinancialAnalysisLogo}
           alt="Description of the image"
         />
         <Typography variant="h5" color="blue-gray" className="mb-2">

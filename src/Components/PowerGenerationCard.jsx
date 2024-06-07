@@ -1,5 +1,5 @@
 import React from "react";
-import PowerGeneration from "../Logos/PowerGeneration.png";
+import PowerGeneration from "../Logos/PowerGeneration.svg";
 import {
   Card,
   CardBody,

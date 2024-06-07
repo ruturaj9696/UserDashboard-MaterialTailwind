@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardBody, Typography } from "@material-tailwind/react";
 import CleaningCycleChart from "../Charts/CleaningCycleChart";
-import PlantInformation from "../Logos/PlantInformation.png";
+import CleaningCycle from "../Logos/CleaningCycle.svg";
 
 export function CleaningCycleCard() {
   return (
@@ -10,7 +10,7 @@ export function CleaningCycleCard() {
         <img
           className="rounded-2xl py-3"
           style={{ height: "100px", width: "100px" }}
-          src={PlantInformation}
+          src={CleaningCycle}
           alt="Description of the image"
         />
         <Typography variant="h5" color="blue-gray" className="mb-2 flex">

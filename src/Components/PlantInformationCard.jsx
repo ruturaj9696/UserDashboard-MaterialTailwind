@@ -6,7 +6,7 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
-import PlantInformation from "../Logos/PlantInformation.png";
+import PlantInformation from "../Logos/PlantInformation.svg";
 export function PlantInformationCard() {
   return (
     <Card className="mt-6 mx-4 hover:shadow-2xl">

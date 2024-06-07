@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import EpiLogo from "../Logos/GroupEpi.svg"
 import {
   Card,
   CardBody,
@@ -29,7 +30,8 @@ export function EpiCard() {
           <img
             className="rounded-2xl py-3"
             style={{ height: "100px", width: "100px" }}
-            src={PowerGeneration}
+            // src={PowerGeneration}
+            src={EpiLogo}
             alt="Power Generation"
           />
           <Typography variant="h5" color="blue-gray" className="mb-2">

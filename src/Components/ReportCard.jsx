@@ -8,7 +8,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 import PowerGenerationBar from "../Charts/PowerGenerationBar";
-import Report from "../Logos/Report.png"
+import Report from "../Logos/Reports.svg"
 export function ReportCard({ title, description, link, linkText ,date,graph}) {
   return (
     <Card className="mt-6 mx-4 hover:shadow-2xl">

@@ -7,7 +7,7 @@ import { PowerGenerationGraph } from "../Components/PowerGenerationGraph";
 import { StickyNavbar } from "../Components/StickyNavbar";
 import { CleaningCycleCard } from "./CleaningCycleCard";
 import { EpiCard } from "./EpiCard";
-import { FinancialAnalysis } from "./FinancialAnalysis";
+import { FinancialAnalysis } from "./FinancialAnalysisCard";
 import { ReportCard } from "./ReportCard";
 const Dashboard = () => {
   return (

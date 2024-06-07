@@ -4,7 +4,7 @@ import {
   CardBody,
   Typography,
 } from "@material-tailwind/react";
-import PowerGeneration from "../Logos/PowerGeneration.png";
+import Irradiation from "../Logos/Irradiation.svg";
 import { IrradiationPopup } from "../Popups/IrradiationPopup"; // Assuming the path is correct
 
 export function IrradiationCard() {
@@ -24,7 +24,7 @@ export function IrradiationCard() {
           <img
             className="rounded-2xl py-3"
             style={{ height: "100px", width: "100px" }}
-            src={PowerGeneration}
+            src={Irradiation}
             alt="Description of the image"
           />
           <Typography variant="h5" color="blue-gray" className="mb-2">

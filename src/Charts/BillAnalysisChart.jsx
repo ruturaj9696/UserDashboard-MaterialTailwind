@@ -2,23 +2,24 @@ import React from "react";
 import { Button, IconButton, Card, Typography } from "@material-tailwind/react";
 import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 
-const TABLE_HEAD = ["Month", "Irradiation", "Location"];
+// Updated table headers and rows
+const TABLE_HEAD = ["Reading Date", "Input Reading", "Expert Reading", "Net Reading", "Generation Reading", "Expert Bill"];
 const TABLE_ROWS = [
-  { month: "January", irradiation: "5.5 kWh/m²/day", location: "Location A" },
-  { month: "February", irradiation: "6.0 kWh/m²/day", location: "Location B" },
-  { month: "March", irradiation: "6.5 kWh/m²/day", location: "Pune" },
-  { month: "April", irradiation: "7.0 kWh/m²/day", location: "Location A" },
-  { month: "May", irradiation: "7.5 kWh/m²/day", location: "Location B" },
-  { month: "June", irradiation: "8.0 kWh/m²/day", location: "Location C" },
-  { month: "July", irradiation: "8.5 kWh/m²/day", location: "Location A" },
-  { month: "August", irradiation: "8.0 kWh/m²/day", location: "Location B" },
-  { month: "September", irradiation: "7.5 kWh/m²/day", location: "Location C" },
-  { month: "October", irradiation: "7.0 kWh/m²/day", location: "Location A" },
-  { month: "November", irradiation: "6.5 kWh/m²/day", location: "Ravet" },
-  { month: "December", irradiation: "6.0 kWh/m²/day", location: "Location C" },
+  { readingDate: "2024-01-01", inputReading: "150", expertReading: "155", netReading: "5", generationReading: "100", expertBill: "$50" },
+  { readingDate: "2024-02-01", inputReading: "160", expertReading: "165", netReading: "5", generationReading: "105", expertBill: "$55" },
+  { readingDate: "2024-03-01", inputReading: "170", expertReading: "175", netReading: "5", generationReading: "110", expertBill: "$60" },
+  { readingDate: "2024-04-01", inputReading: "180", expertReading: "185", netReading: "5", generationReading: "115", expertBill: "$65" },
+  { readingDate: "2024-05-01", inputReading: "190", expertReading: "195", netReading: "5", generationReading: "120", expertBill: "$70" },
+  { readingDate: "2024-06-01", inputReading: "200", expertReading: "205", netReading: "5", generationReading: "125", expertBill: "$75" },
+  { readingDate: "2024-07-01", inputReading: "210", expertReading: "215", netReading: "5", generationReading: "130", expertBill: "$80" },
+  { readingDate: "2024-08-01", inputReading: "220", expertReading: "225", netReading: "5", generationReading: "135", expertBill: "$85" },
+  { readingDate: "2024-09-01", inputReading: "230", expertReading: "235", netReading: "5", generationReading: "140", expertBill: "$90" },
+  { readingDate: "2024-10-01", inputReading: "240", expertReading: "245", netReading: "5", generationReading: "145", expertBill: "$95" },
+  { readingDate: "2024-11-01", inputReading: "250", expertReading: "255", netReading: "5", generationReading: "150", expertBill: "$100" },
+  { readingDate: "2024-12-01", inputReading: "260", expertReading: "265", netReading: "5", generationReading: "155", expertBill: "$105" },
 ];
 
-const rowsPerPage = 8;
+const rowsPerPage = 3;
 
 function DefaultPagination({ total, active, setActive }) {
   const getItemProps = (index) => ({
@@ -66,7 +67,7 @@ function DefaultPagination({ total, active, setActive }) {
   );
 }
 
-function DefaultTable() {
+function BillAnalysisChart() {
   const [activePage, setActivePage] = React.useState(1);
 
   const startIndex = (activePage - 1) * rowsPerPage;
@@ -82,14 +83,7 @@ function DefaultTable() {
               <th
                 key={head}
                 className="border-b border-blue-gray-100 bg-blue-gray-50 p-4"
-                style={{
-                  width:
-                    head === "Month"
-                      ? "20%"
-                      : head === "Irradiation"
-                      ? "40%"
-                      : "40%",
-                }}
+                style={{ width: "16.6%" }}
               >
                 <Typography
                   variant="small"
@@ -103,37 +97,64 @@ function DefaultTable() {
           </tr>
         </thead>
         <tbody>
-          {currentRows.map(({ month, irradiation, location }, index) => {
+          {currentRows.map(({ readingDate, inputReading, expertReading, netReading, generationReading, expertBill }, index) => {
             const isLast = index === currentRows.length - 1;
             const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
 
             return (
-              <tr key={month}>
-                <td className={classes} style={{ width: "20%" }}>
+              <tr key={readingDate}>
+                <td className={classes} style={{ width: "16.6%" }}>
                   <Typography
                     variant="small"
                     color="blue-gray"
                     className="font-normal"
                   >
-                    {month}
+                    {readingDate}
                   </Typography>
                 </td>
-                <td className={classes} style={{ width: "40%" }}>
+                <td className={classes} style={{ width: "16.6%" }}>
                   <Typography
                     variant="small"
                     color="blue-gray"
                     className="font-normal"
                   >
-                    {irradiation}
+                    {inputReading}
                   </Typography>
                 </td>
-                <td className={classes} style={{ width: "40%" }}>
+                <td className={classes} style={{ width: "16.6%" }}>
                   <Typography
                     variant="small"
                     color="blue-gray"
                     className="font-normal"
                   >
-                    {location}
+                    {expertReading}
+                  </Typography>
+                </td>
+                <td className={classes} style={{ width: "16.6%" }}>
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal"
+                  >
+                    {netReading}
+                  </Typography>
+                </td>
+                <td className={classes} style={{ width: "16.6%" }}>
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal"
+                  >
+                    {generationReading}
+                  </Typography>
+                </td>
+                <td className={classes} style={{ width: "16.6%" }}>
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal"
+                  >
+                    {expertBill}
                   </Typography>
                 </td>
               </tr>
@@ -152,4 +173,4 @@ function DefaultTable() {
   );
 }
 
-export default DefaultTable;
+export default BillAnalysisChart;
