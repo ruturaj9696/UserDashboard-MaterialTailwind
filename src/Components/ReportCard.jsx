@@ -1,26 +1,47 @@
-import React from 'react';
-import Reports from "../Logos/Reports.png"
+import React, { useState } from "react";
 import {
   Card,
   CardBody,
-  CardFooter,
   Typography,
-  Button,
 } from "@material-tailwind/react";
-import PowerGenerationBar from "../Charts/PowerGenerationBar";
-import Report from "../Logos/Reports.svg"
-export function ReportCard({ title, description, link, linkText ,date,graph}) {
+import Report from "../Logos/Reports.svg";
+import ReportsPopup from "../Popups/ReportsPopup";
+
+export function ReportCard() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleCardClick = () => {
+    setShowPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
-    <Card className="mt-6 mx-4 hover:shadow-2xl">
-      <CardBody>
-        <img src={Report} alt="Reports" className='h-24' />
-        <Typography variant="h5" color="blue-gray" className="mb-2 mt-5">
-          Reports
-        </Typography>
-        <Typography>
-            This tab contains all kind of reports.
-        </Typography>
-      </CardBody>
-    </Card>
+    <>
+      <Card
+        className="mt-6 mx-4 hover:shadow-2xl cursor-pointer"
+        onClick={handleCardClick}
+      >
+        <CardBody>
+          <img src={Report} alt="Reports" className="h-24" />
+          <Typography variant="h5" color="blue-gray" className="mb-2 mt-5">
+            Reports
+          </Typography>
+          <Typography>This tab contains all kinds of reports.</Typography>
+        </CardBody>
+      </Card>
+
+      <ReportsPopup
+        show={showPopup}
+        onClose={handleClosePopup}
+        content={
+          <Typography variant="h6" color="blue-gray">
+            Report Details
+          </Typography>
+        }
+      />
+    </>
   );
 }
