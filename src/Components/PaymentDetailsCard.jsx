@@ -6,7 +6,7 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
-import FinancialAnalysis from "../Logos/FinancialAnalysis.svg";
+import paymentDetails from "../Logos/paymentDetails.svg"
 import PaymentDetailsPopup from "../Popups/PaymentDetailsPopup";
 export default function PaymentDetailsCard() {
   const [showPopup, setShowPopup] = useState(false);
@@ -28,7 +28,7 @@ export default function PaymentDetailsCard() {
           <img
             className="rounded-2xl py-3"
             style={{ height: "100px", width: "100px" }}
-            src={FinancialAnalysis}
+            src={paymentDetails}
             alt="Description of the image"
           />
           <Typography variant="h5" color="blue-gray" className="mb-2">

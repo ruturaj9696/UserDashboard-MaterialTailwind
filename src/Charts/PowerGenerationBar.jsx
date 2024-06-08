@@ -16,7 +16,7 @@ import {
     height: 240,
     series: [
       {
-        name: "Sales",
+        name: "Power Generation",
         data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
       },
     ],
