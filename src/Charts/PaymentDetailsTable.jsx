@@ -2,23 +2,16 @@ import React from "react";
 import { Button, IconButton, Card, Typography } from "@material-tailwind/react";
 import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 
-const TABLE_HEAD = ["Details", "Amount", "Payment Date"];
+const TABLE_HEAD = ["Details", "Amount", "Payment Date", "Pending Amount"];
 const TABLE_ROWS = [
-  { details: "Details about", amount: "100", paymentDate: "25/04/2024" },
-  { details: "Details", amount: "120", paymentDate: "12/05/2023" },
-  { details: "Details", amount: "120", paymentDate: "22/05/2023" },
-  { details: "Details", amount: "120", paymentDate: "22/05/2023" },
-  { details: "Details", amount: "120", paymentDate: "22/05/2023" },
-  { details: "Details", amount: "130", paymentDate: "23/06/2023" },
-  { details: "Details", amount: "140", paymentDate: "15/07/2023" },
-  { details: "Details", amount: "150", paymentDate: "01/08/2023" },
-  { details: "Details", amount: "160", paymentDate: "10/09/2023" },
-  { details: "Details", amount: "170", paymentDate: "05/10/2023" },
-  { details: "Details", amount: "180", paymentDate: "11/11/2023" },
-  { details: "Details", amount: "190", paymentDate: "20/12/2023" },
+  { details: "First Payment", amount: 10000, paymentDate: "25/04/2024" },
+  { details: "second payment", amount: 1000, paymentDate: "12/05/2023" },
+  { details: "Third payment", amount: 200, paymentDate: "22/05/2023" },
+  { details: "Fourth payment", amount: 500, paymentDate: "22/05/2023" },
+  { details: "Fifth payment", amount: 300, paymentDate: "22/05/2023" },
 ];
 
-const rowsPerPage = 5;
+const rowsPerPage = 10;
 
 function DefaultPagination({ total, active, setActive }) {
   const getItemProps = (index) => ({
@@ -66,12 +59,14 @@ function DefaultPagination({ total, active, setActive }) {
   );
 }
 
-function PaymentDetailsTable() {
+function PaymentDetailsTable({ contractValue }) {
   const [activePage, setActivePage] = React.useState(1);
 
   const startIndex = (activePage - 1) * rowsPerPage;
   const endIndex = startIndex + rowsPerPage;
   const currentRows = TABLE_ROWS.slice(startIndex, endIndex);
+
+  let previousPendingValue = contractValue;
 
   return (
     <Card className="h-full w-full rounded-xl">
@@ -85,9 +80,9 @@ function PaymentDetailsTable() {
                 style={{
                   width:
                     head === "Details"
-                      ? "40%"
-                      : head === "Amount"
                       ? "30%"
+                      : head === "Amount" || head === "Pending Amount"
+                      ? "20%"
                       : "30%",
                 }}
               >
@@ -107,9 +102,16 @@ function PaymentDetailsTable() {
             const isLast = index === currentRows.length - 1;
             const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
 
+            const pendingAmount =
+              index === 0
+                ? contractValue - amount
+                : previousPendingValue - amount;
+
+            previousPendingValue = pendingAmount;
+
             return (
               <tr key={index}>
-                <td className={classes} style={{ width: "40%" }}>
+                <td className={classes} style={{ width: "30%" }}>
                   <Typography
                     variant="small"
                     color="blue-gray"
@@ -118,7 +120,7 @@ function PaymentDetailsTable() {
                     {details}
                   </Typography>
                 </td>
-                <td className={classes} style={{ width: "30%" }}>
+                <td className={classes} style={{ width: "20%" }}>
                   <Typography
                     variant="small"
                     color="blue-gray"
@@ -134,6 +136,17 @@ function PaymentDetailsTable() {
                     className="font-normal"
                   >
                     {paymentDate}
+                  </Typography>
+                </td>
+                <td className={classes} style={{ width: "20%" }}>
+                  <Typography
+                    variant="small"
+                    color="blue-gray"
+                    className="font-normal"
+                  >
+                    {pendingAmount > 0
+                      ? pendingAmount
+                      : "All payments done successfully !"}
                   </Typography>
                 </td>
               </tr>

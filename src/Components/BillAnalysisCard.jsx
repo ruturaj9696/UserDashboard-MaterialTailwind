@@ -28,7 +28,7 @@ export function BillAnalysisCard() {
             alt="Description of the image"
           />
           <Typography variant="h5" color="blue-gray" className="mb-2">
-            Bill Analysis
+            Bill Analysis 
           </Typography>
           <Typography>20/02/2024 - 20/03/2024</Typography>
           <Typography className="text-black text-xl">$25 </Typography>
@@ -40,7 +40,7 @@ export function BillAnalysisCard() {
         onClose={handleClosePopup}
         content={
           <Typography variant="h6" color="blue-gray">
-            Bill Analysis
+            Bill Analysis Details
           </Typography>
         }
       />

@@ -32,7 +32,7 @@ export default function PaymentDetailsCard() {
             alt="Description of the image"
           />
           <Typography variant="h5" color="blue-gray" className="mb-2">
-            Payment Details
+            Payment Tracking
           </Typography>
           <Typography>
             This card contains all the details about the payment
@@ -45,15 +45,10 @@ export default function PaymentDetailsCard() {
         onClose={handleClosePopup}
         content={
           <Typography variant="h6" color="blue-gray">
-            Payment Details
+            Payment Tracking Details
           </Typography>
         }
       >
-        <div className="text-center">
-          <Typography variant="h4" className="mt-6">
-            Epi Details
-          </Typography>
-        </div>
       </PaymentDetailsPopup>
     </>
   );
