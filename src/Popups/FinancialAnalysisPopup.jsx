@@ -15,9 +15,12 @@ export function FinancialAnalysisPopup({ show, onClose }) {
           <div className="w-full">
             <table className="min-w-full bg-white">
               <thead>
+                {/*                     variant="small"
+                    color="blue-gray"
+                    className="font-normal" */}
                 <tr>
-                  <th className="py-2 px-4 bg-gray-200">Details</th>
-                  <th className="py-2 px-4 bg-gray-200">Values</th>
+                  <th className="py-2 px-4 bg-blue-gray-50 text-blue-gray-400 font-normal ">Details</th>
+                  <th className="py-2 px-4 bg-blue-gray-50 text-blue-gray-400 font-normal ">Values</th>
                 </tr>
               </thead>
               <tbody>
