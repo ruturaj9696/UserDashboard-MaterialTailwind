@@ -4,18 +4,18 @@ import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 const TABLE_HEAD = ["Month", "Irradiation", "Location"];
 const TABLE_ROWS = [
-  { month: "January", irradiation: "5.5 kWh/m²/day", location: "Location A" },
-  { month: "February", irradiation: "6.0 kWh/m²/day", location: "Location B" },
-  { month: "March", irradiation: "6.5 kWh/m²/day", location: "Pune" },
-  { month: "April", irradiation: "7.0 kWh/m²/day", location: "Location A" },
-  { month: "May", irradiation: "7.5 kWh/m²/day", location: "Location B" },
-  { month: "June", irradiation: "8.0 kWh/m²/day", location: "Location C" },
-  { month: "July", irradiation: "8.5 kWh/m²/day", location: "Location A" },
-  { month: "August", irradiation: "8.0 kWh/m²/day", location: "Location B" },
-  { month: "September", irradiation: "7.5 kWh/m²/day", location: "Location C" },
-  { month: "October", irradiation: "7.0 kWh/m²/day", location: "Location A" },
-  { month: "November", irradiation: "6.5 kWh/m²/day", location: "Ravet" },
-  { month: "December", irradiation: "6.0 kWh/m²/day", location: "Location C" },
+  { month: "January", irradiation: "5.5 kWh/m²/day", location: "Pune" },
+  { month: "February", irradiation: "5.8 kWh/m²/day", location: "Pune" },
+  { month: "March", irradiation: "6.3 kWh/m²/day", location: "Pune" },
+  { month: "April", irradiation: "6.7 kWh/m²/day", location: "Pune" },
+  { month: "May", irradiation: "6.9 kWh/m²/day", location: "Pune" },
+  { month: "June", irradiation: "6.5 kWh/m²/day", location: "Pune" },
+  { month: "July", irradiation: "6.2 kWh/m²/day", location: "Pune" },
+  { month: "August", irradiation: "6.4 kWh/m²/day", location: "Pune" },
+  { month: "September", irradiation: "6.6 kWh/m²/day", location: "Pune" },
+  { month: "October", irradiation: "6.3 kWh/m²/day", location: "Pune" },
+  { month: "November", irradiation: "5.7 kWh/m²/day", location: "Pune" },
+  { month: "December", irradiation: "5.6 kWh/m²/day", location: "Pune" },
 ];
 
 const rowsPerPage = 5;

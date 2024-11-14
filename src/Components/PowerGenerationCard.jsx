@@ -31,11 +31,11 @@ export function PowerGenerationCard() {
             alt="Description of the image"
           />
           <Typography variant="h5" color="blue-gray" className="mb-2">
-            Power Genration
+            Power Generation
           </Typography>
           <Typography>
-            <span>Today's power generation </span>
-            <span className="text-xl text-black">200Kwh</span>
+            <span className="block">This month's power generation </span>
+            <span className="text-xl text-black">2000 kwh</span>
           </Typography>
         </CardBody>
       </Card>

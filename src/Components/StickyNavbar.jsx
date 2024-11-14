@@ -76,7 +76,7 @@ export function StickyNavbar() {
                 size="sm"
                 className="hidden lg:inline-block"
               >
-                <span>Log In</span>
+                <span>The Ladies Club</span>
               </Button>
             </div>
             <IconButton

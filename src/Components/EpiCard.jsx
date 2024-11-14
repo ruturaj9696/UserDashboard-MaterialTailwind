@@ -37,7 +37,7 @@ export function EpiCard() {
             EPI
           </Typography>
           <Typography>
-            This month's Epi
+            This month's EPI
             <div className="text-black text-xl">93%</div>
           </Typography>
         </CardBody>

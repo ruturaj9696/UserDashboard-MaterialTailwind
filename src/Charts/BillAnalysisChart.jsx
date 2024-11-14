@@ -3,20 +3,112 @@ import { Button, IconButton, Card, Typography } from "@material-tailwind/react";
 import { ArrowRightIcon, ArrowLeftIcon } from "@heroicons/react/24/outline";
 
 // Updated table headers and rows
-const TABLE_HEAD = ["Reading Date", "Input Reading", "Expert Reading", "Net Reading", "Generation Reading", "Expert Bill"];
+const TABLE_HEAD = [
+  "Reading Date",
+  "Import Reading",
+  "Export Reading",
+  "Net Reading",
+  "Generation Reading",
+  "Expected Bill Amount",
+];
+
 const TABLE_ROWS = [
-  { readingDate: "2024-01-01", inputReading: "150", expertReading: "155", netReading: "5", generationReading: "100", expertBill: "$50" },
-  { readingDate: "2024-02-01", inputReading: "160", expertReading: "165", netReading: "5", generationReading: "105", expertBill: "$55" },
-  { readingDate: "2024-03-01", inputReading: "170", expertReading: "175", netReading: "5", generationReading: "110", expertBill: "$60" },
-  { readingDate: "2024-04-01", inputReading: "180", expertReading: "185", netReading: "5", generationReading: "115", expertBill: "$65" },
-  { readingDate: "2024-05-01", inputReading: "190", expertReading: "195", netReading: "5", generationReading: "120", expertBill: "$70" },
-  { readingDate: "2024-06-01", inputReading: "200", expertReading: "205", netReading: "5", generationReading: "125", expertBill: "$75" },
-  { readingDate: "2024-07-01", inputReading: "210", expertReading: "215", netReading: "5", generationReading: "130", expertBill: "$80" },
-  { readingDate: "2024-08-01", inputReading: "220", expertReading: "225", netReading: "5", generationReading: "135", expertBill: "$85" },
-  { readingDate: "2024-09-01", inputReading: "230", expertReading: "235", netReading: "5", generationReading: "140", expertBill: "$90" },
-  { readingDate: "2024-10-01", inputReading: "240", expertReading: "245", netReading: "5", generationReading: "145", expertBill: "$95" },
-  { readingDate: "2024-11-01", inputReading: "250", expertReading: "255", netReading: "5", generationReading: "150", expertBill: "$100" },
-  { readingDate: "2024-12-01", inputReading: "260", expertReading: "265", netReading: "5", generationReading: "155", expertBill: "$105" },
+  {
+    readingDate: "2024-01-01",
+    importReading: "820",
+    exportReading: "310",
+    netReading: "510",
+    generationReading: "605",
+    expectedBillAmount: "₹76500",
+  },
+  {
+    readingDate: "2024-02-01",
+    importReading: "835",
+    exportReading: "325",
+    netReading: "510",
+    generationReading: "610",
+    expectedBillAmount: "₹76500",
+  },
+  {
+    readingDate: "2024-03-01",
+    importReading: "850",
+    exportReading: "330",
+    netReading: "520",
+    generationReading: "615",
+    expectedBillAmount: "₹78000",
+  },
+  {
+    readingDate: "2024-04-01",
+    importReading: "860",
+    exportReading: "340",
+    netReading: "520",
+    generationReading: "620",
+    expectedBillAmount: "₹78000",
+  },
+  {
+    readingDate: "2024-05-01",
+    importReading: "870",
+    exportReading: "350",
+    netReading: "520",
+    generationReading: "625",
+    expectedBillAmount: "₹78000",
+  },
+  {
+    readingDate: "2024-06-01",
+    importReading: "885",
+    exportReading: "360",
+    netReading: "525",
+    generationReading: "630",
+    expectedBillAmount: "₹78750",
+  },
+  {
+    readingDate: "2024-07-01",
+    importReading: "895",
+    exportReading: "370",
+    netReading: "525",
+    generationReading: "635",
+    expectedBillAmount: "₹78750",
+  },
+  {
+    readingDate: "2024-08-01",
+    importReading: "910",
+    exportReading: "380",
+    netReading: "530",
+    generationReading: "640",
+    expectedBillAmount: "₹79500",
+  },
+  {
+    readingDate: "2024-09-01",
+    importReading: "920",
+    exportReading: "390",
+    netReading: "530",
+    generationReading: "645",
+    expectedBillAmount: "₹79500",
+  },
+  {
+    readingDate: "2024-10-01",
+    importReading: "930",
+    exportReading: "400",
+    netReading: "530",
+    generationReading: "650",
+    expectedBillAmount: "₹79500",
+  },
+  {
+    readingDate: "2024-11-01",
+    importReading: "940",
+    exportReading: "405",
+    netReading: "535",
+    generationReading: "655",
+    expectedBillAmount: "₹80250",
+  },
+  {
+    readingDate: "2024-12-01",
+    importReading: "955",
+    exportReading: "410",
+    netReading: "545",
+    generationReading: "660",
+    expectedBillAmount: "₹81750",
+  },
 ];
 
 const rowsPerPage = 5;
@@ -97,69 +189,83 @@ function BillAnalysisChart() {
           </tr>
         </thead>
         <tbody>
-          {currentRows.map(({ readingDate, inputReading, expertReading, netReading, generationReading, expertBill }, index) => {
-            const isLast = index === currentRows.length - 1;
-            const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
+          {currentRows.map(
+            (
+              {
+                readingDate,
+                importReading,
+                exportReading,
+                netReading,
+                generationReading,
+                expectedBillAmount,
+              },
+              index
+            ) => {
+              const isLast = index === currentRows.length - 1;
+              const classes = isLast
+                ? "p-4"
+                : "p-4 border-b border-blue-gray-50";
 
-            return (
-              <tr key={readingDate}>
-                <td className={classes} style={{ width: "16.6%" }}>
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {readingDate}
-                  </Typography>
-                </td>
-                <td className={classes} style={{ width: "16.6%" }}>
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {inputReading}
-                  </Typography>
-                </td>
-                <td className={classes} style={{ width: "16.6%" }}>
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {expertReading}
-                  </Typography>
-                </td>
-                <td className={classes} style={{ width: "16.6%" }}>
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {netReading}
-                  </Typography>
-                </td>
-                <td className={classes} style={{ width: "16.6%" }}>
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {generationReading}
-                  </Typography>
-                </td>
-                <td className={classes} style={{ width: "16.6%" }}>
-                  <Typography
-                    variant="small"
-                    color="blue-gray"
-                    className="font-normal"
-                  >
-                    {expertBill}
-                  </Typography>
-                </td>
-              </tr>
-            );
-          })}
+              return (
+                <tr key={readingDate}>
+                  <td className={classes} style={{ width: "16.6%" }}>
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      {readingDate}
+                    </Typography>
+                  </td>
+                  <td className={classes} style={{ width: "16.6%" }}>
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      {importReading}
+                    </Typography>
+                  </td>
+                  <td className={classes} style={{ width: "16.6%" }}>
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      {exportReading}
+                    </Typography>
+                  </td>
+                  <td className={classes} style={{ width: "16.6%" }}>
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      {netReading}
+                    </Typography>
+                  </td>
+                  <td className={classes} style={{ width: "16.6%" }}>
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      {generationReading}
+                    </Typography>
+                  </td>
+                  <td className={classes} style={{ width: "16.6%" }}>
+                    <Typography
+                      variant="small"
+                      color="blue-gray"
+                      className="font-normal"
+                    >
+                      {expectedBillAmount}
+                    </Typography>
+                  </td>
+                </tr>
+              );
+            }
+          )}
         </tbody>
       </table>
       {TABLE_ROWS.length > rowsPerPage && (

@@ -6,8 +6,8 @@ const TABLE_HEAD = [
   "Cycle Number",
   "Cleaning Date",
   "Cleaning Done By",
-  "Before Cleaning Image",
-  "After Cleaning Image",
+  // "Before Cleaning Image",
+  // "After Cleaning Image",
   "Inverter Status",
 ];
 
@@ -15,55 +15,55 @@ const TABLE_ROWS = [
   {
     cycleNumber: "1",
     cleaningDate: "2024-01-01",
-    cleaningDoneBy: "John Doe",
+    cleaningDoneBy: "Pratik D",
     beforeCleaningImage: "before_image_url_1",
-    afterCleaningImage: {BillAnalysis},
+    afterCleaningImage: "after_image_url_1",
     inverterStatus: "Active",
   },
   {
     cycleNumber: "2",
-    cleaningDate: "2024-01-01",
-    cleaningDoneBy: "John Doe",
+    cleaningDate: "2024-01-16", // 15 days later
+    cleaningDoneBy: "Kiran K",
     beforeCleaningImage: "before_image_url_1",
     afterCleaningImage: "after_image_url_1",
     inverterStatus: "Active",
   },
   {
     cycleNumber: "3",
-    cleaningDate: "2024-01-01",
-    cleaningDoneBy: "John Doe",
+    cleaningDate: "2024-01-31", // 15 days later
+    cleaningDoneBy: "Pratik D",
     beforeCleaningImage: "before_image_url_1",
     afterCleaningImage: "after_image_url_1",
     inverterStatus: "Active",
   },
   {
     cycleNumber: "4",
-    cleaningDate: "2024-01-01",
-    cleaningDoneBy: "John Doe",
+    cleaningDate: "2024-02-15", // 15 days later
+    cleaningDoneBy: "Kiran K",
     beforeCleaningImage: "before_image_url_1",
     afterCleaningImage: "after_image_url_1",
     inverterStatus: "Active",
   },
   {
     cycleNumber: "5",
-    cleaningDate: "2024-01-01",
-    cleaningDoneBy: "John Doe",
+    cleaningDate: "2024-03-01", // 15 days later
+    cleaningDoneBy: "Pratik D",
     beforeCleaningImage: "before_image_url_1",
     afterCleaningImage: "after_image_url_1",
     inverterStatus: "Active",
   },
   {
     cycleNumber: "6",
-    cleaningDate: "2024-01-01",
-    cleaningDoneBy: "John Doe",
+    cleaningDate: "2024-03-16", // 15 days later
+    cleaningDoneBy: "Kiran K",
     beforeCleaningImage: "before_image_url_1",
     afterCleaningImage: "after_image_url_1",
     inverterStatus: "Active",
   },
   {
-    cycleNumber: "2",
-    cleaningDate: "2024-02-01",
-    cleaningDoneBy: "Jane Smith",
+    cycleNumber: "7",
+    cleaningDate: "2024-03-31", // 15 days later
+    cleaningDoneBy: "Pratik D",
     beforeCleaningImage: "before_image_url_2",
     afterCleaningImage: "after_image_url_2",
     inverterStatus: "Inactive",
@@ -199,20 +199,20 @@ function CleaningCycleTable() {
                       {cleaningDoneBy}
                     </Typography>
                   </td>
-                  <td className={classes}>
+                  {/* <td className={classes}>
                     <img
                       src={beforeCleaningImage}
                       alt="Before Cleaning"
                       className="w-full h-auto"
                     />
-                  </td>
-                  <td className={classes}>
+                  </td> */}
+                  {/* <td className={classes}>
                     <img
                       src={afterCleaningImage}
                       alt="After Cleaning"
                       className="w-full h-auto"
                     />
-                  </td>
+                  </td> */}
                   <td className={classes}>
                     <Typography
                       variant="small"

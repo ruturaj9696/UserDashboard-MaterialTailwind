@@ -31,7 +31,7 @@ export function BillAnalysisCard() {
             Bill Analysis 
           </Typography>
           <Typography>20/02/2024 - 20/03/2024</Typography>
-          <Typography className="text-black text-xl">$25 </Typography>
+          <Typography className="text-black text-xl">₹ 2360</Typography>
         </CardBody>
       </Card>
 

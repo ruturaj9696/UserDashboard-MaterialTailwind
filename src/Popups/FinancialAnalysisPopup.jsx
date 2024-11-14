@@ -26,37 +26,37 @@ export function FinancialAnalysisPopup({ show, onClose }) {
               <tbody>
                 <tr>
                   <td className="py-2 px-4 border">User Name</td>
-                  <td className="py-2 px-4 border">Mr Ruturaj Deshmukh</td>
+                  <td className="py-2 px-4 border">The Ladies Club</td>
                 </tr>
                 <tr>
-                  <td className="py-2 px-4 border">Initial investment</td>
+                  <td className="py-2 px-4 border">Initial investment (₹)</td>
                   <td className="py-2 px-4 border">2500000</td>
                 </tr>
                 <tr>
-                  <td className="py-2 px-4 border">Maintenance cost</td>
+                  <td className="py-2 px-4 border">Maintenance cost (₹)</td>
                   <td className="py-2 px-4 border">15000</td>
                 </tr>
                 <tr>
                   <td className="py-2 px-4 border">
-                    Total unit generation till date
+                    Total unit generation till date (kW)
                   </td>
                   <td className="py-2 px-4 border">3434</td>
                 </tr>
                 <tr>
-                  <td className="py-2 px-4 border">Total revenue earned</td>
+                  <td className="py-2 px-4 border">Total revenue earned (₹)</td>
                   <td className="py-2 px-4 border">34232</td>
                 </tr>
                 <tr>
-                  <td className="py-2 px-4 border">Pay back period</td>
-                  <td className="py-2 px-4 border">4.2 years</td>
+                  <td className="py-2 px-4 border">Pay back period (Years)</td>
+                  <td className="py-2 px-4 border">4.2 </td>
                 </tr>
                 <tr>
                   <td className="py-2 px-4 border">IRR</td>
                   <td className="py-2 px-4 border">25%</td>
                 </tr>
                 <tr>
-                  <td className="py-2 px-4 border">NPV</td>
-                  <td className="py-2 px-4 border">22.5 lakh</td>
+                  <td className="py-2 px-4 border">NPV (₹)</td>
+                  <td className="py-2 px-4 border">2250000</td>
                 </tr>
               </tbody>
             </table>

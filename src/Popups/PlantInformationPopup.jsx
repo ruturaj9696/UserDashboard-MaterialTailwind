@@ -3,35 +3,36 @@ import React from "react";
 export function PlantInformationPopup({ show, onClose, content }) {
   if (!show) return null;
 
-  // Dummy data for testing
-  const dummyData = {
-    plantCapacity: "25 kW",
-    email: "example@example.com",
-    siteLocation: "Pune",
-    siteAddress: "123 Main Street, Pune",
-    siteContactNumber: "1234567890",
-    msedclConsumerNumber: "123456",
-    assignedPlan: "Basic Plan",
-    plantCOD: "01/01/2022",
-    msedclRegisteredMobileNumber: "0987654321",
-    numberOfModules: "100",
-    moduleMake: "ModuleX",
-    moduleType: "TypeA",
-    numberOfStrings: "5",
-    inverterMake: "InverterY",
-    inverterModelName: "ModelZ",
-    inverterSerialNumber: "Serial123",
-    inverterCapacity: "50 kW",
-    modeOfInternetConnection: "Wi-Fi",
-    sld: "SLD123",
-    plantLayout: "LayoutABC",
-    netMeteringFile: "FileXYZ",
-    moduleDatasheet: "Sheet1",
-    inverterDatasheet: "Sheet2",
+  // Modified data with provided values
+  const updatedData = {
+    plantID: "pvp_ec6fb83",
+    numberOfModules: "46",
+    plantCapacity: "15.41 kW",
+    email: "example@example.com", // keep as is, as email isn't provided
+    siteLocation: "GVCH+FP Pune, Maharashtra",
+    siteAddress: "The Ladies Club, 3, Colonel Tarapore Rd, Camp, Pune, Maharashtra 411001",
+    siteContactNumber: "9527563840",
+    msedclConsumerNumber: "170011755294",
+    assignedPlan: "PV Protect Pro",
+    plantCOD: "0001-01-01T00:00:00.000Z",
+    msedclRegisteredMobileNumber: "NA", // keep as is, as no value is provided
+    numberOfStrings: "3",
+    moduleMake: "Australian Premium Solar",
+    moduleType: "NA", // keep as is, as no value is provided
+    inverterMake: "Fronius",
+    inverterModelName: "Fronius symo15.0-3-m",
+    inverterSerialNumber: "NA", // keep as is, as no value is provided
+    inverterCapacity: "15 kW",
+    modeOfInternetConnection: "Wi-Fi", // keep as is, as no value is provided
+    sld: "SLD123", // keep as is, as no value is provided
+    plantLayout: "LayoutABC", // keep as is, as no value is provided
+    netMeteringFile: "FileXYZ", // keep as is, as no value is provided
+    moduleDatasheet: "Sheet1", // keep as is, as no value is provided
+    inverterDatasheet: "Sheet2", // keep as is, as no value is provided
   };
 
-  // Merge dummy data with provided content (if any)
-  const mergedContent = { ...dummyData, ...content };
+  // Merge updated data with provided content (if any)
+  const mergedContent = { ...updatedData, ...content };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
@@ -42,6 +43,16 @@ export function PlantInformationPopup({ show, onClose, content }) {
         <div className="w-full h-full">
           <h2 className="text-lg font-bold mb-4 text-center">Plant Information</h2>
           <div className="grid grid-cols-2 gap-4 m-12 border-t border-gray-200">
+            <div className="border-r border-b border-gray-200 p-2">
+              <strong>Plant ID:</strong>
+            </div>
+            <div className="border-b border-gray-200 p-2">{mergedContent.plantID}</div>
+
+            <div className="border-r border-b border-gray-200 p-2">
+              <strong>Number Of Modules:</strong>
+            </div>
+            <div className="border-b border-gray-200 p-2">{mergedContent.numberOfModules}</div>
+
             <div className="border-r border-b border-gray-200 p-2">
               <strong>Plant Capacity:</strong>
             </div>
@@ -68,7 +79,7 @@ export function PlantInformationPopup({ show, onClose, content }) {
             <div className="border-b border-gray-200 p-2">{mergedContent.siteContactNumber}</div>
 
             <div className="border-r border-b border-gray-200 p-2">
-              <strong>MSEDCL Consumer Number:</strong>
+              <strong>MSEBCL Consumer Number:</strong>
             </div>
             <div className="border-b border-gray-200 p-2">{mergedContent.msedclConsumerNumber}</div>
 
@@ -83,14 +94,14 @@ export function PlantInformationPopup({ show, onClose, content }) {
             <div className="border-b border-gray-200 p-2">{mergedContent.plantCOD}</div>
 
             <div className="border-r border-b border-gray-200 p-2">
-              <strong>MSEDCL Registered Mobile Number:</strong>
+              <strong>MSEBCL Registered Mobile Number:</strong>
             </div>
             <div className="border-b border-gray-200 p-2">{mergedContent.msedclRegisteredMobileNumber}</div>
 
             <div className="border-r border-b border-gray-200 p-2">
-              <strong>Number Of Modules:</strong>
+              <strong>Number Of Strings:</strong>
             </div>
-            <div className="border-b border-gray-200 p-2">{mergedContent.numberOfModules}</div>
+            <div className="border-b border-gray-200 p-2">{mergedContent.numberOfStrings}</div>
 
             <div className="border-r border-b border-gray-200 p-2">
               <strong>Module Make:</strong>
@@ -101,11 +112,6 @@ export function PlantInformationPopup({ show, onClose, content }) {
               <strong>Module Type:</strong>
             </div>
             <div className="border-b border-gray-200 p-2">{mergedContent.moduleType}</div>
-
-            <div className="border-r border-b border-gray-200 p-2">
-              <strong>Number Of Strings:</strong>
-            </div>
-            <div className="border-b border-gray-200 p-2">{mergedContent.numberOfStrings}</div>
 
             <div className="border-r border-b border-gray-200 p-2">
               <strong>Inverter Make:</strong>

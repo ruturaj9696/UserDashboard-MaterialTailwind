@@ -17,7 +17,7 @@ import {
     series: [
       {
         name: "Power Generation",
-        data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
+        data: [300, 320, 200, 250, 300, 200, 200, 230, 350],
       },
     ],
     options: {

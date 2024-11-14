@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div>
       <Dashboard/>
-      <Login/>
+      {/* <Login/> */}
     </div>
   );
 };
